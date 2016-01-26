@@ -1,6 +1,6 @@
 {
   "name": "mic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple stream wrapper for arecord (Linux (including Raspbian)) and sox (Mac/Windows). Returns a Passthrough stream object so that stream control like pause(), resume(), pipe(), etc. are all available.",
   "main": "index.js",
   "scripts": {
