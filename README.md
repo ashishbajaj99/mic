@@ -1,5 +1,5 @@
 # mic
-A simple stream wrapper for arecord (Linux (including Raspbian), Windows) and sox (Mac). Returns a Passthrough stream object so that stream control like pause(), resume(), pipe(), etc. are all available.
+A simple stream wrapper for arecord (Linux (including Raspbian)) and sox (Mac/Windows). Returns a Passthrough stream object so that stream control like pause(), resume(), pipe(), etc. are all available.
 
 I've tested this on my Raspberry Pi in a speech recognition project called Ashiya and it works very well. Here are my node versions on raspberry pi:
 
