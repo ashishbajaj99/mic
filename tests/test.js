@@ -1,9 +1,9 @@
 var mic = require('../index.js');
 var fs = require('fs');
 
-mic.startCapture ({ 'rate': '16000', 'channels': '1' });
-var micInputStream = mic.audioStream;
-var micInputStreamInfo = mic.infoStream;
+var micInstance = new mic({ 'rate': '16000', 'channels': '1', 'debug': true, 'exitOnSilence': 6 });
+var micInputStream = micInstance.getAudioStream();
+
 var outputFileStream = fs.WriteStream('output.raw');
 
 micInputStream.pipe(outputFileStream);
@@ -16,11 +16,39 @@ micInputStream.on('error', function(err) {
     cosole.log("Error in Input Stream: " + err);
 });
 
-micInputStreamInfo.on('data', function(data) {
-    console.log("Recieved Info: " + data);
-});
+micInputStream.on('startComplete', function() {
+        console.log("Got SIGNAL startComplete");
+        setTimeout(function() {
+                micInstance.pause();
+            }, 5000);
+    });
+    
+micInputStream.on('stopComplete', function() {
+        console.log("Got SIGNAL stopComplete");
+    });
+    
+micInputStream.on('pauseComplete', function() {
+        console.log("Got SIGNAL pauseComplete");
+        setTimeout(function() {
+                micInstance.resume();
+            }, 5000);
+    });
 
-micInputStream.on('error', function(err) {
-    cosole.log("Error in Info Stream: " + err);
-});
+micInputStream.on('resumeComplete', function() {
+        console.log("Got SIGNAL resumeComplete");
+        setTimeout(function() {
+                micInstance.stop();
+            }, 5000);
+    });
+
+micInputStream.on('silence', function() {
+        console.log("Got SIGNAL silence");
+    });
+
+micInputStream.on('processExitComplete', function() {
+        console.log("Got SIGNAL processExitComplete");
+    });
+
+micInstance.start();
+
 
