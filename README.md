@@ -122,6 +122,7 @@ Returns a microphone object instance that can be used to control the streaming s
     * `device`: `hw:0,0` OR `plughw:1, 0` OR anything valid supported by arecord. Ignored for sox on macOS.
     * `exitOnSilence`: The `'silence'` signal is raised after reaching these many consecutive frames, default: '0'
     * `debug`: true OR false - can be used to aide in debugging
+    * `fileType`: string defaults to 'raw', allows you to set a valid file type such as 'wav' (for sox only) to avoid the no header issue mentioned above, see a list of types [here](http://sox.sourceforge.net/soxformat.html)
 
 ### mic.start()
 This instantiates the process `arecord` OR `sox` using the options specified
