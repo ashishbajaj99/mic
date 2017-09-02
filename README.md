@@ -1,22 +1,7 @@
 # mic
 A simple stream wrapper for arecord (Linux (including Raspbian)) and sox (Mac/Windows). Returns a Mic object that supports a flexible API to control: start, stop, pause, resume functionality. Also it provides access to the audioStream object that provides evented notifications for 'startComplete', 'stopComplete', 'pauseComplete', 'resumeComplete', 'silence' and 'processExitComplete'. You can use this signals to control various states.
 
-This is a cross platform library that has been tested on both my MacbookPro as well as my Raspberry Pi and it works very well on both these platforms. I haven't tested this on Windows, but it should work as long as you have installed either sox OR alsa tools. Here are my node versions on raspberry pi:
-
-```
-$ npm version
-{ mic: '2.0.0',
-  npm: '3.3.12',
-  ares: '1.10.1-DEV',
-  http_parser: '2.6.0',
-  icu: '56.1',
-  modules: '47',
-  node: '5.3.0',
-  openssl: '1.0.2e',
-  uv: '1.7.5',
-  v8: '4.6.85.31',
-  zlib: '1.2.8' }
-```
+This is a cross platform library that has been tested on both my MacbookPro as well as my Raspberry Pi and it works very well on both these platforms. I haven't tested this on Windows, but it should work as long as you have installed either sox OR alsa tools. 
 
 Installation
 ============
