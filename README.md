@@ -52,7 +52,7 @@ micInputStream.on('data', function(data) {
 });
 
 micInputStream.on('error', function(err) {
-    cosole.log("Error in Input Stream: " + err);
+    console.log("Error in Input Stream: " + err);
 });
 
 micInputStream.on('startComplete', function() {
