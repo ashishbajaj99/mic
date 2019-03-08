@@ -51,6 +51,11 @@ micInputStream.on('data', function(data) {
     console.log("Recieved Input Stream: " + data.length);
 });
 
+micInputStream.on('metadata', (metadata) => {
+    console.log('metadata', metadata);
+    //metadata { in: 0, timestamp: 22890, timestamp2: 0, out: 365, volume: 0, hd: 0, clip: 8 }
+});
+
 micInputStream.on('error', function(err) {
     console.log("Error in Input Stream: " + err);
 });
