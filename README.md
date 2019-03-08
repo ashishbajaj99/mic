@@ -129,6 +129,7 @@ This resumes the arecord OR sox process using the `SIGCONT` signal.
 ### mic.getAudioStream()
 This returns a simple Transform stream that contains the data from the arecord OR sox process. This sream can be directly piped to a speaker sream OR a file stream. Further this provides a number of events triggered by the state of the stream:
 * `'silence'`: This is emitted once when `exitOnSilence` number of consecutive frames of silence are found
+* `'sound'`: This is emitted if we hear something after a `silence`
 * `'processExitComplete'`: This is emitted once the arecord OR sox process exits
 * `'startComplete'`: This is emitted once the start() function is successfully executed
 * `'stopComplete'`: This is emitted once the stop() function is successfully executed
