@@ -113,6 +113,8 @@ Returns a microphone object instance that can be used to control the streaming s
     * `exitOnSilence`: The `'silence'` signal is raised after reaching these many consecutive frames, default: '0'
     * `debug`: true OR false - can be used to aide in debugging
     * `fileType`: string defaults to 'raw', allows you to set a valid file type such as 'wav' (for sox only) to avoid the no header issue mentioned above, see a list of types [here](http://sox.sourceforge.net/soxformat.html)
+    * `bufferFrames': buffer duration in # frames for arecord.
+    * `periodFrames': distance between interrupts in # frames for arecord.
 
 ### mic.start()
 This instantiates the process `arecord` OR `sox` using the options specified
