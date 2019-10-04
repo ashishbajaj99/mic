@@ -2,7 +2,7 @@
   "name": "mic",
   "version": "2.1.2",
   "description": "A simple stream wrapper for arecord (Linux (including Raspbian)) and sox (Mac/Windows). Returns a Passthrough stream object so that stream control like pause(), resume(), pipe(), etc. are all available.",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "test": "node tests/test.js"
   },
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/ashishbajaj99/mic/issues"
   },
-  "homepage": "https://github.com/ashishbajaj99/mic#readme"
+  "homepage": "https://github.com/ashishbajaj99/mic#readme",
+  "dependencies": {
+    "@types/node": "*"
+  }
 }
