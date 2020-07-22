@@ -106,7 +106,7 @@ Returns a microphone object instance that can be used to control the streaming s
 * `options` - JSON containing command line options. Following are valid options:
     * `endian`: `big` OR `little`, default: `little`
     * `bitwidth`: `8` OR `16` OR `24` OR anything valid supported by arecord OR sox, default: `16`
-    * `encoding`: `signed-integer` OR `unsinged-integer` (none of the other encoding formats are supported), default:`signed-integer`
+    * `encoding`: `signed-integer` OR `unsinged-integer` OR `floating-point` (none of the other encoding formats are supported), default:`signed-integer`
     * `rate`: `8000` OR `16000` OR `44100` OR anything valid supported by arecord OR sox, default: `16000`
     * `channels`: `1` OR `2` OR anything valid supported by arecord OR sox, default: `1` (mono)
     * `device`: `hw:0,0` OR `plughw:1, 0` OR anything valid supported by arecord. Ignored for sox on macOS.
